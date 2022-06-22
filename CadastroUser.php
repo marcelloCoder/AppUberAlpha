@@ -17,22 +17,23 @@ return $xml;
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/stylecadastro.css">
     <title>Document</title>
 </head>
 <body>
-    <form action="" method="POST">
+    <form class="box" action="" method="POST">
     <h1>Cadastro</h1>
-    <label for="TxtUser">Nome Usuario:</label>
-    <input type="text" name="TxtUser" id="NUser" placehouder="Nome">
+    <label class="txtUser"for="TxtUser">Nome Usuario:</label>
+    <input type="text" class="text-input" name="TxtUser" id="NUser" placeholder="Nome">
     <br>
-    <label for="TxtEmail">Email:</label>
-    <input type="email" name="TxtEmail" id="NEmail" placehouder="Email">
+    <label class="txtUser" for="TxtEmail">Email:</label>
+    <input type="email" class="text-input" name="TxtEmail" id="NEmail" placeholder="Email">
     <br>
-    <label for="TxtSenha">Senha</label>
-    <input type="password" name="TxtSenha" id="senha" placehouder="Senha">
+    <label class="txtUser" for="TxtSenha">Senha</label>
+    <input type="password" class="text-input" name="TxtSenha" id="senha" placeholder="Senha">
     <br>
-    <label for="TxtCofirmar">Confirmar Senha</label>
-    <input type="password" name="TxtCSenha" id="Csenha" placehouder="ConfirmarSenha">
+    <label class="txtUser" for="TxtCofirmar">Confirmar Senha</label>
+    <input type="password" class="text-input" name="TxtCSenha" id="Csenha" placeholder="ConfirmarSenha">
     <br>
     <!--<label for="cep">Cep</label>
     <input type="text" name="cep" id="cep">

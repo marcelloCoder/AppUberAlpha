@@ -1,0 +1,105 @@
+body {
+    width: 100%;
+    margin: 0px;
+    padding:0px;
+    font-family: sans-serif;
+    background: #0c192c;
+   
+     
+  }
+
+
+
+  .button {
+    background-color: #0c192c;
+    border: none;
+    color: rgb(0, 0, 0);
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;  
+    cursor: pointer;
+    transition-duration: 0.4s;
+  }
+
+  .button:hover {
+    background-color: #fefefe;
+    color: rgb(0, 0, 0);
+    border: 2px solid #4CAF50;
+    
+  }
+
+
+ 
+ form{
+
+    background-color: #0c192c;
+    border: 2px solid rgba(255, 0, 0, 0.715);
+    
+    border-radius: 18px;
+    padding: 5px 132px;
+    width: 10px;
+    display:inline-table;
+    margin: 100px 500px;
+     
+
+ }
+
+
+
+ .box {
+
+  margin-inline: center;
+  border-radius:20px;
+  width: 280px;
+    padding: 50px;
+  
+  text-align: center;
+    
+}
+
+.box h1 {
+  color: rgb(255, 255, 255);
+  text-transform: uppercase;
+  font-weight: 500;
+}
+
+ 
+
+.text-input {
+  border:0;
+  background: none;
+  display: block;
+  margin: 20px auto;
+  text-align: center;
+  border: 2px solid rgba(255, 0, 0, 0.715);
+  padding: 14px 10px;
+  width: 200px;
+  outline: none;
+  color: rgb(0, 0, 0);
+  border-radius: 25px;
+  transition: 0.25s;
+  
+}
+ .txtUser{
+    color: #fefefe;
+ }
+ 
+ 
+
+ .box input[type="submit"] {
+  border: 0;
+  background-color: none;
+  display: block;
+  margin: 20px auto;
+  text-align: center;
+  border: 2px solid #1aeb47;
+  padding: 14px 40px;
+  outline: none;
+  color: rgb(0, 0, 0);
+  border-radius: 25px;
+  transition: 0.25s;
+  cursor: pointer;
+}
+
