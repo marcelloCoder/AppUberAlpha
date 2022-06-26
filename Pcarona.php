@@ -47,15 +47,7 @@
             <button type="button" class="btn btn-warning" id="Fcar">Fazer Carona</button>
             <button type="button" class="btn btn-warning" id="Pcar">Procurar Carona</button>
         </header>
-            <form>
-                <input type = "text" class="" placeholder="Veiculo" id="tpVeiculo">
-                <br>
-                <input type = "text" class="" placeholder="Valor" id="tpValor">
-                <br>
-                <input type = "text" class="" placeholder="Iternario" id="tpIternario">
-                <br>
-                <input type = "submit" class="" placeholder="Solicitar" id="tpSoli">
-            </form>
+
     </main>
 
     
