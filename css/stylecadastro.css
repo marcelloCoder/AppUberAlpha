@@ -1,3 +1,6 @@
+*{
+  box-sizing: border-box;
+}
 body {
     width: 100%;
     margin: 0px;
@@ -32,7 +35,7 @@ body {
 
 
  
- form{
+ form {
 
     background-color: #0c192c;
     border: 2px solid rgba(255, 0, 0, 0.715);

@@ -1,0 +1,19 @@
+*{
+    box-sizing: border-box;
+}
+main{
+    background-color: white;
+    padding: 10px;
+    margin: 10% auto; 
+    width: 1000px;
+    height: 1000px;
+    border: dotted 5 px black;
+    border-radius: 5px;
+    box-shadow: 8px 8px 5px #5a5f49cc;
+}
+main > aside{
+    font-size: 14pt;
+}
+main > article{
+    color:  #741d00;
+}
