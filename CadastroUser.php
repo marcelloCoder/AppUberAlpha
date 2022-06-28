@@ -48,17 +48,30 @@ return $xml;
   </header>
     <form class="box" action="" method="POST">
     <h1>Cadastro</h1>
-    <label class="txtUser"for="TxtUser">Nome Usuario:</label>
-    <input type="text" class="text-input" name="TxtUser" id="NUser" placeholder="Nome">
+    <label class="txtUser"for="TxtNome">Nome Completo:</label>
+    <input type="text" class="text-input" name="TxtNome" id="NComp" placeholder="Nome">
     <br>
-    <label class="txtUser" for="TxtEmail">Email:</label>
-    <input type="email" class="text-input" name="TxtEmail" id="NEmail" placeholder="Email">
+    <label class="txtUser" for="TxtEmail">E-mail:</label>
+    <input type="email" class="text-input" name="TxtEmail" id="NEmail" placeholder="E-mail">
+    <br>
+    <label class="txtUser" for="TxtSexo">Sexo:</label><br>
+    <select name="TxtSexo" id="NSexo">
+      <option value="">Selecione</option>
+      <option value="F">Feminino</option>
+      <option value="M">Masculino</option>
+    </select>
+    <br><br>
+    <label class="txtUser" for="TxtTel">Telefone:</label>
+    <input type="text" class="text-input" name="TxtTel" id="NTel" placeholder="Telefone" maxlength="11">
+    <br>
+    <label class="txtUser" for="TxtCpf">CPF:</label>
+    <input type="text" class="text-input" name="TxtCpf" id="NCpf" placeholder="Cpf" maxlength="11">
     <br>
     <label class="txtUser" for="TxtSenha">Senha</label>
-    <input type="password" class="text-input" name="TxtSenha" id="senha" placeholder="Senha">
+    <input type="password" class="text-input" name="TxtSenha" id="Senha" placeholder="Senha">
     <br>
     <label class="txtUser" for="TxtCofirmar">Confirmar Senha</label>
-    <input type="password" class="text-input" name="TxtCSenha" id="Csenha" placeholder="ConfirmarSenha">
+    <input type="password" class="text-input" name="TxtCSenha" id="CSenha" placeholder="Confirmar Senha">
     <br>
     <!--<label for="cep">Cep</label>
     <input type="text" name="cep" id="cep">
