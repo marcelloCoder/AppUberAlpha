@@ -9,7 +9,7 @@ Pcar.addEventListener("click",function(c){
 });
 Fcar.addEventListener("click",function(c){
     c.preventDefault;
-    window.location.href="Fcarona.php";
+    window.location.href="Fcarona.php";  
 });
 Flogin.addEventListener("click",function(c){
     c.preventDefault;
