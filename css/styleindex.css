@@ -1,7 +1,9 @@
 *{
     box-sizing: border-box;
 }
-
+body{
+    background-color: rgb(66, 54, 54);
+}
 main{
     background-color: rgb(65, 61, 61);
     padding: 10px;
