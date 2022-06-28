@@ -1,0 +1,73 @@
+
+:root{
+    --primary: #eb1ccc;
+    --secondary: #95989a;
+    --text-color: white;
+    --text-secondary: black;
+    --text-tertiary: #5d5d5d;
+
+}
+
+*{
+    font-family: "Montserrat";
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+#event-description{
+    background: linear-gradient(rgba(0,0,0.8),rgba(0,0,0,.8 )),url("../imgs/transferir.jpg");
+    background-position: center;
+    background-size: cover;
+    height: 85vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: var(--text-color);
+    text-align: center;
+}
+#btn{
+    text-align: center;
+    margin: 0 auto;
+}
+
+#disclaimer h2{
+    color: var(--primary);
+}
+
+#disclaimer h2{
+    font-size: 3em ;
+    margin-bottom: 1em;
+}
+
+#disclaimer .about-event{
+    font-size: 2em;
+    text-transform: uppercase;
+    max-width: 350px;
+    font-weight: bold;
+    margin-bottom: 1em;
+}
+
+#discleimer p{
+    font-size:  1.2em;
+    margin-bottom: .3em;
+}
+#cta {
+    height: 300px;
+    background: linear-gradient(rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.8)),
+      url("../imgs/duvida.jpg");
+    background-position: center;
+    background-size: cover;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    text-align: center;
+    color: var(--text-color);
+  }
+  
+  #cta h3 {
+    margin-bottom: 1.2em;
+    font-size: 2em;
+    font-weight: 500;
+  }
+  
