@@ -1,16 +1,3 @@
-<?php
-function get_endereco($cep){
-
-
-// formatar o cep removendo caracteres não numericos
-$cep = preg_replace("/[^0-9]/", "", $cep);
-$url = "http://viacep.com.br/ws/$cep/xml/";
-
-$xml = simplexml_load_file($url);
-return $xml;
-}
-
-?>
 <?php # Verifica se foi enviado algum ID
 	if (!isset($_GET["id"])) { // Novo registro pessoa
 		$idUsuario = 0;
@@ -45,7 +32,7 @@ return $xml;
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
     <script src="scripts/redirecionar.js" defer></script>
     <script src="scripts/cadUser.js" ></script>
-    <title>Document</title>
+    <title>Login</title>
 </head>
 <body>
 <header class="p-3 bg-dark text-white">
@@ -72,40 +59,19 @@ return $xml;
       </div>
     </div>
   </header>
-    <form class="box" action="salvar.php" method="POST">
-        <h1>Cadastro</h1>
-        <label class="txtUser"for="TxtNome">Nome Completo:</label>
-        <input type="text" class="text-input" name="TxtNome" id="NComp" placeholder="Nome" requidred>
+    <form class="box" action="autenticaLogin.php" method="POST">
+        <h1>Login</h1>
+        <label class="txtUser"for="LNome">Nome Completo:</label>
+        <input type="text" class="text-input" name="LNome" id="NComp" placeholder="Nome" requidred>
         value="<?php echo($nome); ?>"/>
         <br>
-        <label class="txtUser" for="TxtEmail">E-mail:</label>
-        <input type="email" class="text-input" name="TxtEmail" id="NEmail" placeholder="E-mail" requidred>
-        value="<?php echo($email); ?>"/>
+        
         <br>
-        <label class="txtUser" for="SelectSex">Sexo:</label><br>
-        <select class="text-input" name="SelectSex" id="NSexo">
-          <option value="">Selecione</option>
-          <option value="F">Feminino</option>
-          <option value="M">Masculino</option>
-        </select>
-        value="<?php echo($sexo); ?>"/>
-        <br><br>
-        <label class="txtUser" for="TxtTel">Telefone:</label>
-        <input type="text" class="text-input" name="TxtTel" id="NTel" placeholder="Telefone" maxlength="11" requidred>
-        value="<?php echo($telefone); ?>"/>
-        <br>
-        <label class="txtUser" for="TxtCpf">CPF:</label>
-        <input type="text" class="text-input" name="TxtCpf" id="NCpf" placeholder="Cpf" maxlength="11" requidred>
-        value="<?php echo($cpf); ?>"/>
-        <br>
-        <label class="txtUser" for="TxtSenha">Senha</label>
-        <input type="password" class="text-input" name="TxtSenha" id="Senha" placeholder="Senha" requidred>
+        <label class="txtUser" for="LSenha">Senha</label>
+        <input type="password" class="text-input" name="LSenha" id="Senha" placeholder="Senha" requidred>
         value="<?php echo($senha); ?>"/>
-        <br>
-        <label class="txtUser" for="TxtCofirmar">Confirmar Senha</label>
-        <input type="password" class="text-input" name="TxtCSenha" id="CSenha" placeholder="Confirmar Senha" requidred>
-        <br>
-        <input  class="text-input" type="submit" id="cad"  placeholder="Cadastrar" value="cadastrar">
+        
+        <input  class="text-input" type="submit" id="cad"  placeholder="LOGIN" value="login">
         <!--<label for="cep">Cep</label>
         <input type="text" name="cep" id="cep">
         <input type="submit" value="Pesquisar"> -->

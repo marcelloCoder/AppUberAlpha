@@ -1,5 +1,5 @@
 function loginA(){
-    window.location.href = "CadastroUser.php"
+    window.location.href = "login.php"
   }
 
 function signA(){

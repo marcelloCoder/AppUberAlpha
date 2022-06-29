@@ -11,14 +11,8 @@ Fcar.addEventListener("click",function(c){
     c.preventDefault;
     window.location.href="Fcarona.php";  
 });
-Flogin.addEventListener("click",function(c){
-    c.preventDefault;
-    window.location.href="Pcarona.php";
-});
-Freg.addEventListener("click",function(c){
-    c.preventDefault;
-    window.location.href="CadstroUser.php";
-});
+
+
 ir.addEventListener("click",function(c){
     c.preventDefault;
     window.location.href="Pcarona.php";
