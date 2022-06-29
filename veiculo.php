@@ -3,67 +3,67 @@
 include_once("conecta.php"); // Inclui a classe conecta
 
 
-function validaCarona($inti, $valor) {
-    $sql = "SELECT * FROM carona WHERE  itinerario_carona = '".$inti."' AND valor_carona = '".$valor."';";
+function validaVeiculo($nomeveiculo, $tipoveiculo) {
+    $sql = "SELECT * FROM veiculo WHERE  nome_veiculo = '".$nomeveiculo."' AND tipo_veiculo = '".$tipoveiculo."';";
     $conexao = abreConexao(); // Abre a conexão com o BD
     $resultado = $conexao->query($sql);
     $conexao->close(); // Fecha a conexão com o BD
     if (mysqli_num_rows($resultado) > 0) {
-         $carona = mysqli_fetch_array($resultado);
-         return $carona;
+         $veiculo = mysqli_fetch_array($resultado);
+         return $veiculo;
     } else {
          return null;
     } 
 }
-function retornaCarona() {
-	$sql = "SELECT * FROM carona ORDER BY itinerario_carona";
+function retornaVeiculo() {
+	$sql = "SELECT * FROM veiculo ORDER BY nome_veiculo";
 	$conexao = abreConexao(); # Abre a conexão com o BD
 	$resultado = $conexao->query($sql);
 	$conexao->close(); // Fecha a conexão com o BD
 	if (mysqli_num_rows($resultado) > 0) {
 		 while ($row = mysqli_fetch_array($resultado)) {
-			  $caronas[] = $row;
+			  $veiculos[] = $row;
 		 }
-		 return $caronas;
+		 return $veiculos;
 	} else {
 		 return null;
 	} }
 
-    function retornaCaronaPorCod($cod) {
-        $sql = "SELECT * FROM carona WHERE cod_carona = ".$cod;
+    function retornaVeiculoPorCod($cod) {
+        $sql = "SELECT * FROM veiculo WHERE cod_veiculo = ".$cod;
         $conexao = abreConexao(); // Abre a conexão com o BD
         $resultado = $conexao->query($sql);
         $conexao->close(); // Fecha a conexão com o BD
         if (mysqli_num_rows($resultado) > 0) {
-             $Carona = mysqli_fetch_array($resultado);
-             return $carona;
+             $veiculo = mysqli_fetch_array($resultado);
+             return $veiculo;
         } else {
              return null;
         } 
     }
 
-    function insereCarona($itinerario, $observacao, $partida, $vagas,$valor) {
+    function insereVeiculo($nomeveiculo, $tipoveiculo, $placa) {
         echo "Aqui insere";
         // Define o comando SQL  (insert)
-        $sql = "INSERT INTO carona(itinerario_carona, observacao_carona, partida_carona,vagas_carona, valor_carona) 
-            VALUES('$itinerario', '$observacao', '$partida', '$vagas', $valor)";
+        $sql = "INSERT INTO Veiculo(nome_veiculo, tipo_veiculo, placa_veiculo) 
+            VALUES('$nomeveiculo', '$tipoveiculo', '$placa')";
         $conexao = abreConexao(); // Abre a conexão com o BD
         $conexao->query($sql); // Executa o comando SQL
         $conexao->close(); 	// Fecha a conexão com o BD
     }
 
-    function alteraCarona($itinerario, $observacao, $partida, $vagas,$valor, $cod) {
+    function alteraVeiculo($nomeveiculo, $tipoveiculo, $placa, $tipoveiculo, $cod) {
         // Define o comando SQL  (update)
-        $sql = "UPDATE carona SET itinerario_carona = '$itinerario', 
-            observacao_carona = '$observacao', partida_carona = '$partida', vagas_carona = '$vagas', valor_carona=' $valor' WHERE cod_carona = $cod"; 
+        $sql = "UPDATE veiculo SET nome_veiculo = '$nomeveiculo', 
+            tipo_veiculo = '$tipoveiculo', partida_veiculo = '$placa' WHERE cod_veiculo = $cod"; 
         $conexao = abreConexao(); // Abre a conexão com o BD
         $conexao->query($sql);	 // Executa o comando SQL
         $conexao->close(); // Fecha a conexão com o BD
     }
 
-    function excluiCarona($cod) {
+    function excluiVeiculo($cod) {
         // Define o comando SQL  (delete)
-        $sql = "DELETE FROM carona WHERE cod_carona = $cod"; 
+        $sql = "DELETE FROM veiculo WHERE cod_veiculo = $cod"; 
         $conexao = abreConexao(); // Abre a conexão com o BD
         $conexao->query($sql); // Executa o comando SQL
         $conexao->close(); // Fecha a conexão com o BD 
