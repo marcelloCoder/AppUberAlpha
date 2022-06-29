@@ -19,6 +19,8 @@ return $xml;
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="css/stylecadastro.css">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+    <script src="scripts/redirecionar.js" defer></script>
+    <script src="scripts/cadUser.js" ></script>
     <title>Document</title>
 </head>
 <body>
@@ -40,8 +42,8 @@ return $xml;
       
 
         <div class="text-end">
-          <button type="button" class="btn btn-outline-light me-2">Login</button>
-          <button type="button" class="btn btn-warning">Sign-up</button>
+          <button type="button" class="btn btn-outline-light me-2" id="loginA" value="loginA" onclick="loginA()">Login</button>
+          <button type="button" class="btn btn-warning" id="signA" value="signA" onclick="signA()">Sign-up</button>                       
         </div>
       </div>
     </div>
@@ -55,7 +57,7 @@ return $xml;
     <input type="email" class="text-input" name="TxtEmail" id="NEmail" placeholder="E-mail">
     <br>
     <label class="txtUser" for="TxtSexo">Sexo:</label><br>
-    <select name="TxtSexo" id="NSexo">
+    <select class="text-input" name="TxtSexo" id="NSexo">
       <option value="">Selecione</option>
       <option value="F">Feminino</option>
       <option value="M">Masculino</option>

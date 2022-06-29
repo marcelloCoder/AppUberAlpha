@@ -1,5 +1,0 @@
-CREATE DATABASE uberalpha;
-CREATE TABLE tbusuario (idUs int PRIMARY KEY AUTO_INCREMENT, email varchar(50) NOT NULL, senha varchar(10) NOT NULL, local varchar(60) NOT NULL, 
-
-
-

@@ -23,3 +23,8 @@ ir.addEventListener("click",function(c){
     c.preventDefault;
     window.location.href="Pcarona.php";
 });
+
+const element = document.getElementById("myBtn");
+element.addEventListener("click", function() {
+    document.getElementById("demo").innerHTML = "Hello World";
+});
