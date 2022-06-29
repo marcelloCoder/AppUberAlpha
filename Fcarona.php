@@ -1,3 +1,25 @@
+<?php # Verifica se foi enviado algum ID
+	if (!isset($_GET["cod"])) { // Novo registro carona
+		$codcarona = 0;
+		$titulo = "Cadastro de uma nova carona";
+    $itinerario = $observacao = $partida =$vagas= $valor="";
+	} else { // Alteração de registro
+		$codcarona = $_GET["cod"]; 
+		include_once("carona.php");
+		$codcarona = retornaCaronaPorCod($codcarona);
+		if ($carona != null) { // Verifica se retornou um registro
+            $titulo = "Atualização dos dados da carona";
+            $itinerario = $carona["itinerario_carona"];
+            $observacao = $carona["observacao_carona"];
+            $partida = $carona["partida_carona"];
+            $vagas = $carona["vagas_carona"];
+            $valor = $carona["valor_carona"];       
+
+          }
+      }
+	 
+    
+  ?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -10,6 +32,7 @@
     <link href="css/styleindex.css" rel="stylesheet">
     <script src="scripts/redirecionar.js" defer></script>
     <script src="scripts/cadUser.js" ></script>
+    <script src="scripts/logUser.js" ></script>
     <title>Pagina inicial</title>
 </head>
 <body>
@@ -37,7 +60,7 @@
         </form>
 
         <div class="text-end">
-          <button type="button" class="btn btn-outline-light me-2" id="loginA" value="loginA" onclick="loginA()">Login</button>
+          <button type="button" class="btn btn-outline-light me-2" id="loginA" value="" onclick="loginA()">Login</button>
           <button type="button" class="btn btn-warning" id="signA" value="signA" onclick="signA()">Sign-up</button>          
         </div>
       </div>
@@ -48,14 +71,28 @@
             <button type="button" class="btn btn-warning" id="Fcar">Fazer Carona</button>
             <button type="button" class="btn btn-warning" id="Pcar">Procurar Carona</button>
         </header>
-            <form>
-                <input type = "text" class="" placeholder="Veiculo" id="tpVeiculo">
+            <form action="salvarCarona.php" method="POST">
+                <input type = "text" class="" name="TxtVeiculo" placeholder="Veiculo" id="tpVeiculo">
+              
                 <br>
-                <input type = "text" class="" placeholder="Valor" id="tpValor">
+                <input type = "text" class="" name="Txtvalor" placeholder="Valor" id="tpValor">
+                <?php echo($valor); ?>
                 <br>
-                <input type = "text" class="" placeholder="Iternario" id="tpIternario">
+                <input type = "text" class="" name="Txtvagas" placeholder="Vagas" id="tpVagas">
+                <?php echo($vagas); ?>
+                <br>
+                <input type = "text" class="" name="Txtiti" placeholder="Iternario" id="tpIternario">
+                <?php echo($itinerario); ?>
+                <br>
+                <input type = "text" class="" name="Txtptd" placeholder="Partida" id="tpPartida">
+                <?php echo($partida); ?>
+                <br>
+                <input type = "text" class="" name="Txtobs" placeholder="Observacao" id="tpObservacao">
+                <?php echo($observacao); ?>
                 <br>
                 <input type = "submit" class="" placeholder="Solicitar" id="tpSoli">
+            
+          
             </form>
     </main>
 

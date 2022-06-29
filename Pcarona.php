@@ -10,6 +10,7 @@
     <link href="css/styleindex.css" rel="stylesheet">
     <script src="scripts/redirecionar.js" defer></script>
     <script src="scripts/cadUser.js" ></script>
+    <script src="scripts/logUser.js" ></script>
     <title>Pagina inicial</title>
 </head>
 <body>
@@ -35,7 +36,7 @@
         
 
         <div class="col-md-3 text-end">
-          <button type="button" class="btn btn-outline-light me-2" id="loginA" value="loginA" onclick="loginA()">Login</button>
+          <button type="button" class="btn btn-outline-light me-2" id="loginA" value="" onclick="loginA()">Login</button>
           <button type="button" class="btn btn-warning" id="signA" value="signA" onclick="signA()">Sign-up</button>          
         </div>
       </div>

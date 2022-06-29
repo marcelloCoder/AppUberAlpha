@@ -45,6 +45,7 @@ return $xml;
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
     <script src="scripts/redirecionar.js" defer></script>
     <script src="scripts/cadUser.js" ></script>
+    <script src="scripts/logUser.js" ></script>
     <title>Document</title>
 </head>
 <body>
@@ -66,7 +67,7 @@ return $xml;
       
 
         <div class="text-end">
-          <button type="button" class="btn btn-outline-light me-2" id="loginA" value="loginA" onclick="loginA()">Login</button>
+          <button type="button" class="btn btn-outline-light me-2" id="loginA" value="" onclick="loginA()">Login</button>
           <button type="button" class="btn btn-warning" id="signA" value="signA" onclick="signA()">Sign-up</button>                       
         </div>
       </div>
@@ -105,7 +106,7 @@ return $xml;
         <label class="txtUser" for="TxtCofirmar">Confirmar Senha</label>
         <input type="password" class="text-input" name="TxtCSenha" id="CSenha" placeholder="Confirmar Senha" requidred>
         <br>
-        <input  class="text-input" type="submit" id="cad"  placeholder="Cadastrar" value="cadastrar">
+        <input  type="submit" id="cad"  placeholder="Cadastrar" value="Cadastrar">
         <!--<label for="cep">Cep</label>
         <input type="text" name="cep" id="cep">
         <input type="submit" value="Pesquisar"> -->
