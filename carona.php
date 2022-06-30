@@ -35,7 +35,7 @@ function retornaCarona() {
         $resultado = $conexao->query($sql);
         $conexao->close(); // Fecha a conexão com o BD
         if (mysqli_num_rows($resultado) > 0) {
-             $Carona = mysqli_fetch_array($resultado);
+             $carona = mysqli_fetch_array($resultado);
              return $carona;
         } else {
              return null;
