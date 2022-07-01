@@ -13,8 +13,8 @@ Fcar.addEventListener("click",function(c){
 });
 
 
-ir.addEventListener("click",function(c){
-    c.preventDefault;
+ir.addEventListener("click",function(D){
+    D.preventDefault;
     window.location.href="Pcarona.php";
 });
 

@@ -2,7 +2,7 @@
 		
         include_once("carona.php");
         
-		
+		$codcarona = $_POST["cod"];
 		$itinerario = $_POST["Txtiti"];
         $observacao = $_POST["Txtobs"];
         $partida = $_POST["Txtptd"];

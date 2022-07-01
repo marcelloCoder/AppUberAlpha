@@ -13,7 +13,7 @@ return $xml;
 ?>
 <?php # Verifica se foi enviado algum ID
 	if (!isset($_GET["id"])) { // Novo registro pessoa
-		$idUsuario = 0;
+		$idusuario = 0;
 		$titulo = "Cadastro de uma nova pessoa";
     $nome = $telefone = $email =$cpf= $sexo= $senha="";
 	} else { // Alteração de registro
@@ -75,6 +75,8 @@ return $xml;
   </header>
     <form class="box" action="salvar.php" method="POST">
         <h1>Cadastro</h1>
+        <input type="hidden" name="id" 
+									value="<?php echo($idusuario); ?>"/>
         <label class="txtUser"for="TxtNome">Nome Completo:</label>
         <input type="text" class="text-input" name="TxtNome" id="NComp" placeholder="Nome" requidred>
         value="<?php echo($nome); ?>"/>

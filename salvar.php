@@ -2,9 +2,8 @@
 		
         include_once("pessoa.php");
         
-		
+		$idusuario = $_POST["id"];
 		$nome = $_POST["TxtNome"];
-		
 		$telefone = $_POST["TxtTel"];
 		$email = $_POST["TxtEmail"];
 		$senha = $_POST["TxtSenha"];

@@ -26,7 +26,7 @@
         </a>
 
         <ul class="nav col-12 col-lg-auto me-lg-auto mb-2 justify-content-center mb-md-0">
-        <li><a href="index.html" class="nav-link px-2 text-secondary">Home</a></li>
+              <li><a href="index.html" class="nav-link px-2 text-secondary">Home</a></li>
               <li><a href="Fcarona.php" class="nav-link px-2 text-white">Fazer carona</a></li>
               <li><a href="Pcarona.php" class="nav-link px-2 text-white">Pedir carona</a></li>
               <li><a href="VisualizarVeiculo.php" class="nav-link px-2 text-white">Veiculo</a></li>
@@ -36,17 +36,13 @@
 
         <div class="col-md-3 text-end">
           <button type="button" class="btn btn-outline-light me-2" id="loginA" value="" onclick="loginA()">Login</button>
-          <button type="button" class="btn btn-warning" id="signA" value="signA" onclick="signA()">Sign-up</button>          
+          <button type="button" class="btn btn-warning" id="signA" value="signA" onclick="signA()">Sign-up</button>         
         </div>
       </div>
     </div>
   </header>
     <main>
-        <header class="p-3 bg-dark text-white">
-            <button type="button" class="btn btn-warning" id="Fcar">Fazer Carona</button>
-            <button type="button" class="btn btn-warning" id="Pcar">Procurar Carona</button>
-            <button type="button" class="btn btn-warning" id="Pcar">Cadastrar Veiculo</button>
-        </header>
+    <button type="button" class="btn btn-warning" id="Ccar">Cadastrar Veiculo</button> 
 
     </main>
 
