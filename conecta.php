@@ -2,7 +2,7 @@
 
     function abreConexao() {
         $servername = "localhost";
-        $database = "bancodadosuberalpha";
+        $database = "bduber";
         $username = "root";
         $password = "";
         
