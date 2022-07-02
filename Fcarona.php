@@ -52,6 +52,7 @@
               <li><a href="Fcarona.php" class="nav-link px-2 text-white">Fazer carona</a></li>
               <li><a href="Pcarona.php" class="nav-link px-2 text-white">Pedir carona</a></li>
               <li><a href="VisualizarVeiculo.php" class="nav-link px-2 text-white">Veiculo</a></li>
+              <li><a href="paginaMapa.php" class="nav-link px-2 text-white">Localizar no Mapa</a></li>
         </ul>
 
         <form class="col-12 col-lg-auto mb-3 mb-lg-0 me-lg-3" role="search">
