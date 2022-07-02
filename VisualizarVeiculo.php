@@ -42,8 +42,34 @@
       </div>
     </div>
   </header>
+  
+  
     <main>
-    <button type="button" class="btn btn-warning" id="Ccar">Cadastrar Veiculo</button> 
+    <table class="table">
+	  <?php include_once("veiculo.php");
+    $codmt= 1;
+		$vetveiculo = retornaVeiculo($codmt);
+		if ($vetveiculo != null) {
+            foreach ($vetveiculo as $veiculo) {
+                $nome = $veiculo['nome_veiculo'];
+                $placa = $veiculo['placa_veiculo'];
+                $tipveiculo = $veiculo['tipo_veiculo'];
+                $codveiculo = $veiculo['cod_veiculo'];
+     echo('<tr> <td>'.$nome.'</td> <td>'.$placa.'</td>
+    <td>'.$tipoveiculo.'</td> <td><a href="formulario.php?id='.$codveiculo.
+    '" class="btn btn-primary">Alterar</a><a href="excluir.php?id='. $codveiculo.'" class="btn btn-danger" onclick="return confirm(\'Deseja excluir?\');">Excluir</a></td> </tr>');
+            } // fecha foreach
+        } // fecha if
+        else {
+            echo("<h1>Seu veiculo não foi cadastrado</h1>");
+            
+        }
+        ?>
+        </table>
+        <div class="centralizar">
+    
+        <button  style="text-align:center" type="button" class="btn btn-warning" id="Ccar" >Cadastrar Veiculo</button>
+        </div>
 
     </main>
 

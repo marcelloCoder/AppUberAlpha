@@ -20,13 +20,8 @@ main > aside{
 main > article{
     color:  #741d00;
 }
-.boxM{
-    background-color: rgb(65, 61, 61);
-    padding: 10px;
-    margin: 20% auto; 
-    width: 950px;
-    height: 1000px;
-    border: dotted 5 px black;
-    border-radius: 5px;
-    box-shadow: 8px 8px 5px #5a5f49cc;
+.centralizar{
+    text-align: center;
+    justify-content: center;
+    align-items: center;
 }
