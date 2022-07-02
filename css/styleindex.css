@@ -8,6 +8,7 @@ main{
     background-color: rgb(65, 61, 61);
     padding: 10px;
     margin: 10% auto; 
+    margin-top: 1px;
     width: 1000px;
     height: 1000px;
     border: dotted 5 px black;

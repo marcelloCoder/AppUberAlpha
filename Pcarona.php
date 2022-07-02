@@ -11,6 +11,7 @@
     <script src="scripts/redirecionar.js" defer></script>
     <script src="scripts/cadUser.js" ></script>
     <script src="scripts/logUser.js" ></script>
+    <script src="scripts/validar.js" ></script>
     <title>Pagina inicial</title>
 </head>
 <body>
@@ -46,7 +47,7 @@
         <header class="p-3 bg-dark text-white">
             <button type="button" class="btn btn-warning" id="Fcar">Fazer Carona</button>
             <button type="button" class="btn btn-warning" id="Pcar">Procurar Carona</button>
-            <button type="button" class="btn btn-warning" id="Pcar">Cadastrar Veiculo</button>
+            <button type="button" class="btn btn-warning" id="utp" onclick="utp()">Cadastrar Veiculo</button>
         </header>
 
     </main>

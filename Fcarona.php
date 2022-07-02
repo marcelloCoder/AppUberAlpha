@@ -14,7 +14,7 @@
             $partida = $carona["partida_carona"];
             $vagas = $carona["vagas_carona"];
             $valor = $carona["valor_carona"];       
-
+           
           }
       }
 	 
@@ -33,6 +33,7 @@
     <script src="scripts/redirecionar.js" defer></script>
     <script src="scripts/cadUser.js" ></script>
     <script src="scripts/logUser.js" ></script>
+    <script src="scripts/validar.js" ></script>
     <title>Pagina inicial</title>
 </head>
 <body>
@@ -68,16 +69,16 @@
   </header>
     <main>
         <header class="p-3 bg-dark text-white">
-              <li><a href="index.html" class="nav-link px-2 text-secondary">Home</a></li>
-              <li><a href="Fcarona.php" class="nav-link px-2 text-white">Fazer carona</a></li>
-              <li><a href="Pcarona.php" class="nav-link px-2 text-white">Pedir carona</a></li>
-              <li><a href="VisualizarVeiculo.php" class="nav-link px-2 text-white">Veiculo</a></li>
+            <button type="button" class="btn btn-warning" id="Fcar">Fazer Carona</button>
+            <button type="button" class="btn btn-warning" id="Pcar">Procurar Carona</button>
+            <button type="button" class="btn btn-warning" id="utp" onclick="utp()">Cadastrar Veiculo</button>
         </header>
+
         
             <form class="row g-3 needs-validation boxM" action="salvarCarona.php" method="POST">
             <input type="hidden" name="cod" 
 									value="<?php echo($codecarona); ?>"/>
-                <input type = "text" class="form-control" name="TxtVeiculo" placeholder="Veiculo" id="tpVeiculo">
+                <input type = "text" class="form-control" name="TxtVeiculo" placeholder="Veiculo" id="tpVeiculo" >
                 <br>
                 <br>
                 <input type = "text" class="form-control" name="Txtvalor" placeholder="Valor" id="tpValor"value=<?php echo($valor); ?>>
