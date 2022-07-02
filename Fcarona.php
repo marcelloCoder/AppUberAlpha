@@ -67,9 +67,10 @@
   </header>
     <main>
         <header class="p-3 bg-dark text-white">
-            <button type="button" class="btn btn-warning" id="Fcar">Fazer Carona</button>
-            <button type="button" class="btn btn-warning" id="Pcar">Procurar Carona</button>
-            <button type="button" class="btn btn-warning" id="Pcar">Cadastrar Veiculo</button>
+              <li><a href="index.html" class="nav-link px-2 text-secondary">Home</a></li>
+              <li><a href="Fcarona.php" class="nav-link px-2 text-white">Fazer carona</a></li>
+              <li><a href="Pcarona.php" class="nav-link px-2 text-white">Pedir carona</a></li>
+              <li><a href="VisualizarVeiculo.php" class="nav-link px-2 text-white">Veiculo</a></li>
         </header>
         
             <form class="row g-3 needs-validation boxM" action="salvarCarona.php" method="POST">
