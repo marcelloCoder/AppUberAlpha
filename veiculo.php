@@ -15,8 +15,8 @@ function validaVeiculo($nomeveiculo, $tipoveiculo) {
          return null;
     } 
 }
-function retornaVeiculo() {
-	$sql = "SELECT * FROM veiculo ORDER BY nome_veiculo";
+function retornaVeiculo($code) {
+	$sql = "SELECT * FROM veiculo ORDER BY nome_veiculo WHERE cod_veiculo=.$code" ;
 	$conexao = abreConexao(); # Abre a conexão com o BD
 	$resultado = $conexao->query($sql);
 	$conexao->close(); // Fecha a conexão com o BD
@@ -27,10 +27,11 @@ function retornaVeiculo() {
 		 return $veiculos;
 	} else {
 		 return null;
-	} }
+	} 
+    }
 
     function retornaVeiculoPorCod($cod) {
-        $sql = "SELECT * FROM veiculo WHERE cod_veiculo = ".$cod;
+        $sql = "SELECT * FROM veiculo WHERE cod_veiculo = .$cod";
         $conexao = abreConexao(); // Abre a conexão com o BD
         $resultado = $conexao->query($sql);
         $conexao->close(); // Fecha a conexão com o BD
@@ -52,7 +53,7 @@ function retornaVeiculo() {
         $conexao->close(); 	// Fecha a conexão com o BD
     }
 
-    function alteraVeiculo($nomeveiculo, $tipoveiculo, $placa, $tipoveiculo, $cod) {
+    function alteraVeiculo($nomeveiculo, $tipoveiculo, $placa, $cod) {
         // Define o comando SQL  (update)
         $sql = "UPDATE veiculo SET nome_veiculo = '$nomeveiculo', 
             tipo_veiculo = '$tipoveiculo', partida_veiculo = '$placa' WHERE cod_veiculo = $cod"; 
