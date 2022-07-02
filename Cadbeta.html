@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/styletst.css">
+    <title>Document</title>
+</head>
+<body>
+    <div class="main-login">
+        
+        <div class="left-login">
+            <h1>Faça Cadastro <br> E entre no nosso time</h1>
+            <img class="left-login-image" src="css/Cad.svg" alt="cad">
+        </div>
+        <div class="right-login">
+            <div class="card-login">
+                <h1>Cadastro</h1>
+                <div class="textfield">
+                    <form action="">
+                        <div class="textfield">
+                            <input type="hidden" name="id" 
+                                        value="<?php echo($idusuario); ?>"/>
+                        </div>
+                        <div class="textfield">
+                            <label class="txtUser"for="TxtNome">Nome Completo:</label>
+                            <input type="text" class="text-input" name="TxtNome" id="NComp" placeholder="Nome" requidred>
+                            
+                        </div>
+                        <div class="textfield">
+                            <label class="txtUser" for="TxtEmail">E-mail:</label>
+                            <input type="email" class="text-input" name="TxtEmail" id="NEmail" placeholder="E-mail" requidred>
+                           
+                        </div>
+                        <div class="textfield">
+                            <label class="txtUser" for="SelectSex">Sexo:</label><br>
+                                <select class="text-input" name="SelectSex" id="NSexo">
+                                <option value="">Selecione</option>
+                                <option value="F">Feminino</option>
+                                <option value="M">Masculino</option>
+                                </select>
+                               
+                        </div>
+                        <div class="textfield">
+                            <label class="txtUser" for="TxtTel">Telefone:</label>
+                            <input type="text" class="text-input" name="TxtTel" id="NTel" placeholder="Telefone" maxlength="11" requidred>
+                           
+                        </div>
+                        <div class="textfield">
+                            <label class="txtUser" for="TxtCpf">CPF:</label>
+                            <input type="text" class="text-input" name="TxtCpf" id="NCpf" placeholder="Cpf" maxlength="11" requidred>
+                          
+                        </div>
+                        <div class="textfield">
+                            <label class="txtUser" for="TxtSenha">Senha</label>
+                            <input type="password" class="text-input" name="TxtSenha" id="Senha" placeholder="Senha" requidred>
+                         
+                        </div>
+                        <div class="textfield">
+                            <label class="txtUser" for="TxtCofirmar">Confirmar Senha</label>
+                            <input type="password" class="text-input" name="TxtCSenha" id="CSenha" placeholder="Confirmar Senha" requidred> 
+                            
+                        </div>
+                        <div>
+                            <input  class="btn-login" type="submit" id="cad"  placeholder="Cadastrar" value="Cadastrar">  
+                        </div>
+                    </form>
+                </div>
+                
+            </div>
+        </div>
+    </div>
+    
+</body>
+</html>
