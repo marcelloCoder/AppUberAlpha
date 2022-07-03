@@ -35,7 +35,7 @@
     <script src="scripts/logUser.js" ></script>
     <title>Login</title>
 </head>
-<body>
+<body style=" background-color: rgb(66, 54, 54)">
 <header class="p-3 bg-dark text-white">
     <div class="container">
       <div class="d-flex flex-wrap align-items-center justify-content-center justify-content-lg-start">
@@ -72,24 +72,11 @@
         <input type="password" class="text-input" name="LSenha" id="Senha" placeholder="Senha" requidred>
         value="<?php echo($senha); ?>"/>
         
-        <input  class="submit" type="submit" id="cad"  placeholder="LOGIN" value="Login">
-        <!--<label for="cep">Cep</label>
-        <input type="text" name="cep" id="cep">
-        <input type="submit" value="Pesquisar"> -->
+        <input  class="btn" type="submit" id="cad"  placeholder="LOGIN" value="Login">
+      
     </form>
    
 
-<?php /*if($_POST['cep']){ ?>
-<h2>Resultado da Pesquisa</h2>
-<p>
-  <?php $endereco = get_endereco("37500405"); ?>
-  <b>CEP: </b> <?php echo $endereco->cep; ?><br>
-  <b>Logradouro: </b> <?php echo $endereco->logradouro; ?><br>
-  <b>Bairro: </b> <?php echo $endereco->bairro; ?><br>
-  <b>Localidade: </b> <?php echo $endereco->localidade; ?><br>
-  <b>UF: </b> <?php echo $endereco->uf; ?><br>
-</p>
-<?php } */ ?>
 
     
     

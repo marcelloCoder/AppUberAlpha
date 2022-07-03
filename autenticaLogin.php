@@ -14,7 +14,7 @@
     <?php }else{  
         $_SESSION['login'] = true;
     ?>
-        <meta http-equiv="refresh" content="0; URL='index.html'"/>
+        <meta http-equiv="refresh" content="0; URL='index.html?mensagem=lg'"/>
     <?php    }
     exit(1);  
 

@@ -7,8 +7,7 @@ body {
     margin: 0px;
     padding:0px;
     font-family: sans-serif;
-    background: #0c192c;
-   
+    background-color: rgb(66, 54, 54);
      
   }
 
@@ -81,7 +80,7 @@ body {
   padding: 14px 10px;
   width: 200px;
   outline: none;
-  color: rgb(0, 0, 0);
+  color: white;
   border-radius: 25px;
   transition: 0.25s;
   
@@ -101,9 +100,11 @@ body {
   border: 2px solid #1aeb47;
   padding: 14px 40px;
   outline: none;
-  color: rgb(0, 0, 0);
+  color: white;
   border-radius: 25px;
   transition: 0.25s;
   cursor: pointer;
 }
-
+.btn{
+  background: #046b26;
+}
