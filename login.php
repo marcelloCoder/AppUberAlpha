@@ -1,3 +1,4 @@
+
 <?php # Verifica se foi enviado algum ID
 	if (!isset($_GET["id"])) { // Novo registro pessoa
 		$idUsuario = 0;
@@ -61,6 +62,7 @@
     </div>
   </header>
     <form class="box" action="autenticaLogin.php" method="POST">
+        
         <h1>Login</h1>
         <label class="txtUser"for="LNome">Nome Completo:</label>
         <input type="text" class="text-input" name="LNome" id="NComp" placeholder="Nome" requidred>

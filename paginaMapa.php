@@ -1,3 +1,11 @@
+<?php
+// session_start inicia a sessão
+session_start();
+
+if(!isset($_SESSION['nomeSession']) and !isset($_SESSION['senhaSession'])){
+  header("Location:login.php"); 
+
+?>
 <!DOCTYPE html >
   <head>
     <meta name="viewport" content="initial-scale=1.0, user-scalable=no" />

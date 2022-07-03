@@ -2,20 +2,22 @@
     session_start();   
     include_once("pessoa.php");
 
-    $user = $_POST["TxtNome"];
-    $pass = $_POST["TxtSenha"];
+    $user = $_POST["LNome"];
+    $pass = $_POST["LSenha"];
 
     $logins = validaUsuario($user, $pass);
 
     if($logins == null){ 
-        $_SESSION['login'] = false; ?>
+        
+
     
-        <meta http-equiv="refresh" content="0; URL='index.html?mensagem=ui'"/>
-    <?php }else{  
-        $_SESSION['login'] = true;
-    ?>
-        <meta http-equiv="refresh" content="0; URL='index.html?mensagem=lg'"/>
-    <?php    }
-    exit(1);  
+    $_SESSION['nomeSession'] = $user;
+    $_SESSION['senhaSession'] = $pass;
+
+    }    
+    
+       
+   
+   
 
 ?>

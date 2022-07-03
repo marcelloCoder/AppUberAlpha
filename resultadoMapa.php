@@ -1,4 +1,8 @@
 <?php
+
+
+
+
 require("conecta.php");
 
 function parseToXML($htmlStr){

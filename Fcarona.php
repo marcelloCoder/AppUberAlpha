@@ -1,3 +1,12 @@
+<?php
+// session_start inicia a sessão
+session_start();
+
+if(!isset($_SESSION['nomeSession']) and !isset($_SESSION['senhaSession'])){
+  header("Location:login.php"); 
+
+?>
+
 <?php # Verifica se foi enviado algum ID
 	if (!isset($_GET["cod"])) { // Novo registro carona
 		$codecarona = 0;
