@@ -13,9 +13,10 @@
     
     $_SESSION['nomeSession'] = $user;
     $_SESSION['senhaSession'] = $pass;
-
-    }    
-    
+    header("Location:login.php");
+       
+    }else    
+    header("Location:index.html");
        
    
    

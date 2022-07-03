@@ -1,10 +1,12 @@
 <?php
 // session_start inicia a sessão
 session_start();
-
-if(!isset($_SESSION['nomeSession']) and !isset($_SESSION['senhaSession'])){
-  header("Location:login.php"); 
-
+$logado = 0 ;
+if((!isset($_SESSION['nomeSession'])) AND (!isset($_SESSION['senhaSession']))){
+  header("Location:login.php");
+  $logado = 1 ;
+  exit;
+}
 ?>
 
 <!DOCTYPE html>
@@ -39,15 +41,23 @@ if(!isset($_SESSION['nomeSession']) and !isset($_SESSION['senhaSession'])){
               <li><a href="index.html" class="nav-link px-2 text-secondary">Home</a></li>
               <li><a href="Fcarona.php" class="nav-link px-2 text-white">Fazer carona</a></li>
               <li><a href="Pcarona.php" class="nav-link px-2 text-white">Pedir carona</a></li>
-              <li><a href="VisualizarVeiculo.php" class="nav-link px-2 text-white">Veiculo</a></li>
+              <li><a href="Visualizarcarona.php" class="nav-link px-2 text-white">carona</a></li>
               <li><a href="paginaMapa.php" class="nav-link px-2 text-white">Localizar no Mapa</a></li>
         </ul>
 
         
 
         <div class="col-md-3 text-end">
+          <?php
+          if($logado == 1){
+         ?>
+          <button type="button" class="btn btn-outline-light me-2" id="loginA" value="" onclick="loginA()">Deslogar</button>
+          <?php
+          }else{
+          ?>
           <button type="button" class="btn btn-outline-light me-2" id="loginA" value="" onclick="loginA()">Login</button>
-          <button type="button" class="btn btn-warning" id="signA" value="signA" onclick="signA()">Sign-up</button>          
+          <button type="button" class="btn btn-warning" id="signA" value="signA" onclick="signA()">Sign-up</button>      
+          <?php } ?>    
         </div>
       </div>
     </div>
@@ -56,8 +66,35 @@ if(!isset($_SESSION['nomeSession']) and !isset($_SESSION['senhaSession'])){
         <header class="p-3 bg-dark text-white">
             <button type="button" class="btn btn-warning" id="Fcar">Fazer Carona</button>
             <button type="button" class="btn btn-warning" id="Pcar">Procurar Carona</button>
-            <button type="button" class="btn btn-warning" id="utp" onclick="utp()">Cadastrar Veiculo</button>
+            <button type="button" class="btn btn-warning" id="utp" onclick="utp()">Cadastrar carona</button>
         </header>
+        <table class="table">
+        <?php include_once("carona.php");
+        $codmt= 1;
+        $vetcarona = retornaCarona();
+        if ($vetcarona != null) {
+                foreach ($vetcarona as $carona) {
+                    $volor = $carona['valor_carona'];
+                    $partida = $carona['partida_carona'];
+                    $vaga = $carona['vagas_carona'];
+                    $itinerario = $carona['itinerario_carona'];
+                    $obv = $carona['observacao_carona'];
+                    $codcarona = $carona['cod_carona'];
+        echo('<tr> <td>'.$valor.'</td> <td>'.$partida.'</td>
+        <td>'.$itinerario.'</td> <td>'.$obv.'</td> <td><a href="formulario.php?id='.$codcarona.
+        '" class="btn btn-primary">Alterar</a><a href="excluir.php?id='. $codcarona.'" class="btn btn-danger" onclick="return confirm(\'Deseja excluir?\');">Excluir</a></td> </tr>');
+                } // fecha foreach
+            } // fecha if
+            else {
+                echo("<h1>Nenhuma carona a vista</h1>");
+                
+            }
+            ?>
+            </table>
+            <div class="centralizar">
+        
+            <button  style="text-align:center" type="button" class="btn btn-warning" id="Pcar" >Cadastrar carona</button>
+            </div>
 
     </main>
 
