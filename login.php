@@ -66,13 +66,13 @@
         <h1>Login</h1>
         <label class="txtUser"for="LNome">Nome Completo:</label>
         <input type="text" class="text-input" name="LNome" id="NComp" placeholder="Nome" requidred>
-        value="<?php echo($nome); ?>"/>
+        <?php echo($nome); ?>
         <br>
         
         <br>
         <label class="txtUser" for="LSenha">Senha</label>
         <input type="password" class="text-input" name="LSenha" id="Senha" placeholder="Senha" requidred>
-        value="<?php echo($senha); ?>"/>
+        <?php echo($senha); ?>
         
         <input  class="btn" type="submit" id="cad"  placeholder="LOGIN" value="Login">
       

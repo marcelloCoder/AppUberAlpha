@@ -68,11 +68,11 @@
 									value="<?php echo($idusuario); ?>"/>
         <label class="txtUser"for="TxtNome">Nome Completo:</label>
         <input type="text" class="text-input" name="TxtNome" id="NComp" placeholder="Nome" requidred>
-        value="<?php echo($nome); ?>"/>
+        <?php echo($nome); ?>
         <br>
         <label class="txtUser" for="TxtEmail">E-mail:</label>
         <input type="email" class="text-input" name="TxtEmail" id="NEmail" placeholder="E-mail" requidred>
-        value="<?php echo($email); ?>"/>
+        <?php echo($email); ?>
         <br>
         <label class="txtUser" for="SelectSex">Sexo:</label><br>
         <select class="text-input" name="SelectSex" id="NSexo">
@@ -80,19 +80,19 @@
           <option value="F">Feminino</option>
           <option value="M">Masculino</option>
         </select>
-        value="<?php echo($sexo); ?>"/>
+        <?php echo($sexo); ?>
         <br><br>
         <label class="txtUser" for="TxtTel">Telefone:</label>
         <input type="text" class="text-input" name="TxtTel" id="NTel" placeholder="Telefone" maxlength="11" requidred>
-        value="<?php echo($telefone); ?>"/>
+        <?php echo($telefone); ?>
         <br>
         <label class="txtUser" for="TxtCpf">CPF:</label>
         <input type="text" class="text-input" name="TxtCpf" id="NCpf" placeholder="Cpf" maxlength="11" requidred>
-        value="<?php echo($cpf); ?>"/>
+        <?php echo($cpf); ?>
         <br>
         <label class="txtUser" for="TxtSenha">Senha</label>
         <input type="password" class="text-input" name="TxtSenha" id="Senha" placeholder="Senha" requidred>
-        value="<?php echo($senha); ?>"/>
+        <?php echo($senha); ?>
         <br>
         <label class="txtUser" for="TxtCofirmar">Confirmar Senha</label>
         <input type="password" class="text-input" name="TxtCSenha" id="CSenha" placeholder="Confirmar Senha" requidred>

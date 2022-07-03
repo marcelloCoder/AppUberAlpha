@@ -1,6 +1,6 @@
 <?php
-// session_start inicia a sessão
-session_start();
+  // session_start inicia a sessão
+  session_start();
 $logado = 0 ;
 if((!isset($_SESSION['nomeSession'])) AND (!isset($_SESSION['senhaSession']))){
   header("Location:login.php");
@@ -8,103 +8,127 @@ if((!isset($_SESSION['nomeSession'])) AND (!isset($_SESSION['senhaSession']))){
   exit;
 }
 ?>
-<!DOCTYPE html >
-  <head>
-    <meta name="viewport" content="initial-scale=1.0, user-scalable=no" />
-    <meta http-equiv="content-type" content="text/html; charset=UTF-8"/>
-    <title>Using MySQL and PHP with Google Maps</title>
-    <style>
-      /* Always set the map height explicitly to define the size of the div
-       * element that contains the map. */
-      #map {
-        height: 100%;
-      }
-      /* Optional: Makes the sample page fill the window. */
-      html, body {
-        height: 100%;
-        margin: 0;
-        padding: 0;
-      }
-    </style>
-  </head>
 
-  <body>
-    <div id="map"></div>
-
-    <script>
-      var customLabel = {
-        restaurant: {
-          label: 'R'
-        },
-        bar: {
-          label: 'B'
-        }
-      };
-
-        function initMap() {
-        var map = new google.maps.Map(document.getElementById('map'), {
-          center: new google.maps.LatLng(-20.714927289642134, -46.627855527612766),
-          zoom: 14
-        });
-        var infoWindow = new google.maps.InfoWindow;
-
-          // Change this depending on the name of your PHP or XML file
-          downloadUrl('resultadoMapa.php', function(data) {
-            var xml = data.responseXML;
-            var markers = xml.documentElement.getElementsByTagName('marker');
-            Array.prototype.forEach.call(markers, function(markerElem) {
-              var name = markerElem.getAttribute('name');
-              var address = markerElem.getAttribute('address');
-              var type = markerElem.getAttribute('type');
-              var point = new google.maps.LatLng(
-                  parseFloat(markerElem.getAttribute('lat')),
-                  parseFloat(markerElem.getAttribute('lng')));
-
-              var infowincontent = document.createElement('div');
-              var strong = document.createElement('strong');
-              strong.textContent = name
-              infowincontent.appendChild(strong);
-              infowincontent.appendChild(document.createElement('br'));
-
-              var text = document.createElement('text');
-              text.textContent = address
-              infowincontent.appendChild(text);
-              var icon = customLabel[type] || {};
-              var marker = new google.maps.Marker({
-                map: map,
-                position: point,
-                label: icon.label
-              });
-              marker.addListener('click', function() {
-                infoWindow.setContent(infowincontent);
-                infoWindow.open(map, marker);
-              });
-            });
-          });
-        }
-
-
-
-      function downloadUrl(url, callback) {
-        var request = window.ActiveXObject ?
-            new ActiveXObject('Microsoft.XMLHTTP') :
-            new XMLHttpRequest;
-
-        request.onreadystatechange = function() {
-          if (request.readyState == 4) {
-            request.onreadystatechange = doNothing;
-            callback(request, request.status);
+<?php # Verifica se foi enviado algum ID
+	if (!isset($_GET["cod"])) { // Novo registro carona
+		$codecarona = 0;
+		$titulo = "Cadastro de uma nova carona";
+    $itinerario = $observacao = $partida =$vagas= $valor="";
+	} else { // Alteração de registro
+		$codcarona = $_GET["cod"]; 
+		include_once("carona.php");
+		$carona = retornaCaronaPorCod($codcarona);
+		if ($carona != null) { // Verifica se retornou um registro
+            $titulo = "Atualização dos dados da carona";
+            $itinerario = $carona["itinerario_carona"];
+            $observacao = $carona["observacao_carona"];
+            $partida = $carona["partida_carona"];
+            $vagas = $carona["vagas_carona"];
+            $valor = $carona["valor_carona"];       
+           
           }
-        };
-
-        request.open('GET', url, true);
-        request.send(null);
       }
+	 
+    
+?>
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <link href="headers.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+    <link href="css/styleindex.css" rel="stylesheet">
+    <script src="scripts/redirecionar.js" defer></script>
+    <script src="scripts/cadUser.js" ></script>
+    <script src="scripts/logUser.js" ></script>
+    <script src="scripts/validar.js" ></script>
+    <title>Pagina inicial</title>
+  </head>
+  <body>
 
-      function doNothing() {}
-    </script>
-    <script async defer
-    src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBZe30IXREJXJLqf_UFzRsoWYwrbvHo5JQ&callback=initMap">
-    </script>
-  </body>
+    
+
+
+    <header class="p-3 bg-dark text-white">
+      <div class="container">
+        <div class="d-flex flex-wrap align-items-center justify-content-center justify-content-lg-start">
+          <a href="/" class="d-flex align-items-center mb-2 mb-lg-0 text-white text-decoration-none">
+            <svg class="bi me-2" width="40" height="32" role="img" aria-label="Bootstrap"><use xlink:href="#bootstrap"/></svg>
+          </a>
+
+          <ul class="nav col-12 col-lg-auto me-lg-auto mb-2 justify-content-center mb-md-0">
+          <li><a href="index.html" class="nav-link px-2 text-secondary">Home</a></li>
+                <li><a href="Fcarona.php" class="nav-link px-2 text-white">Fazer carona</a></li>
+                <li><a href="Pcarona.php" class="nav-link px-2 text-white">Pedir carona</a></li>
+                <li><a href="VisualizarVeiculo.php" class="nav-link px-2 text-white">Veiculo</a></li>
+                <li><a href="paginaMapa.php" class="nav-link px-2 text-white">Localizar no Mapa</a></li>
+          </ul>
+
+          <form class="col-12 col-lg-auto mb-3 mb-lg-0 me-lg-3" role="search">
+            <input type="search" class="form-control form-control-dark text-white bg-dark" placeholder="Search..." aria-label="Search">
+          </form>
+
+          <div class="text-end">
+            <button type="button" class="btn btn-outline-light me-2" id="loginA" value="" onclick="loginA()">Login</button>
+            <button type="button" class="btn btn-warning" id="signA" value="signA" onclick="signA()">Sign-up</button>          
+          </div>
+        </div>
+      </div>
+    </header>
+    <main>
+        <header class="p-3 bg-dark text-white">
+            <button type="button" class="btn btn-warning" id="Fcar">Fazer Carona</button>
+            <button type="button" class="btn btn-warning" id="Pcar">Procurar Carona</button>
+            <button type="button" class="btn btn-warning" id="utp" onclick="utp()">Cadastrar Veiculo</button>
+        </header>
+        <form  method="POST">
+          <p>
+            <input type="text" name="address" placeholder="Seu Endereço">
+          </p>
+            <input type="submit" name="submit_address">
+        </form>
+        <form method="POST">
+          <p>
+           <input type="text" name="latitude" placeholder="Sua latitude">
+          </p>
+          <p>
+            <input type="text" name="longitude" placeholder="Sua longitude">
+          </p>
+            <input type="submit" name="submit_coordinates">
+        </form>
+            
+          
+          
+          
+    
+<?php
+    if (isset($_POST["submit_address"]))
+    {
+        $address = $_POST["address"];
+        $address = str_replace(" ", "+", $address);
+        ?>
+ 
+        <iframe width="100%" height="500" src="https://maps.google.com/maps?q=<?php echo $address; ?>&output=embed"></iframe>
+ 
+        <?php
+    }
+
+    if (isset($_POST["submit_coordinates"]))
+    {
+        $latitude = $_POST["latitude"];
+        $longitude = $_POST["longitude"];
+        ?>
+ 
+        <iframe width="100%" height="500" src="https://maps.google.com/maps?q=<?php echo $latitude; ?>,<?php echo $longitude; ?>&output=embed"></iframe>
+ 
+        <?php
+    }
+?>
+</main>
+
+    
+</body>
 </html>

@@ -41,7 +41,7 @@ if((!isset($_SESSION['nomeSession'])) AND (!isset($_SESSION['senhaSession']))){
               <li><a href="index.html" class="nav-link px-2 text-secondary">Home</a></li>
               <li><a href="Fcarona.php" class="nav-link px-2 text-white">Fazer carona</a></li>
               <li><a href="Pcarona.php" class="nav-link px-2 text-white">Pedir carona</a></li>
-              <li><a href="Visualizarcarona.php" class="nav-link px-2 text-white">carona</a></li>
+              <li><a href="Visualizarcarona.php" class="nav-link px-2 text-white">Veiculo</a></li>
               <li><a href="paginaMapa.php" class="nav-link px-2 text-white">Localizar no Mapa</a></li>
         </ul>
 
@@ -66,7 +66,7 @@ if((!isset($_SESSION['nomeSession'])) AND (!isset($_SESSION['senhaSession']))){
         <header class="p-3 bg-dark text-white">
             <button type="button" class="btn btn-warning" id="Fcar">Fazer Carona</button>
             <button type="button" class="btn btn-warning" id="Pcar">Procurar Carona</button>
-            <button type="button" class="btn btn-warning" id="utp" onclick="utp()">Cadastrar carona</button>
+            <button type="button" class="btn btn-warning" id="utp" onclick="utp()">Cadastrar Veiculo</button>
         </header>
         <table class="table">
         <?php include_once("carona.php");
